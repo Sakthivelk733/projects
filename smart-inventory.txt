@@ -1,0 +1,33 @@
+smart-inventory/
+│
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── routers/
+│   │   ├── products.py
+│   │   ├── orders.py
+│   │   ├── users.py
+│   ├── requirements.txt
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── components/
+│   │   │   ├── Navbar.js
+│   │   │   ├── ProductList.js
+│   │   │   ├── AddProduct.js
+│   │   │   ├── Orders.js
+│   │   │   ├── Dashboard.js
+│   │   ├── api.js
+│   ├── package.json
+│
+├── database/
+│   ├── schema.sql
+│
+└── devops/
+    ├── docker-compose.yml
+    ├── Dockerfile.backend
+    ├── Dockerfile.frontend
+    ├── github-actions.yml
