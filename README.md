@@ -1,2 +1,21 @@
-# projects
-Smart Inventory &amp; Order Management System
+name: Deploy Smart Inventory
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  backend-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: SSH Deploy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ubuntu
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            cd /var/www/backend
+            git pull
+            systemctl restart backend
